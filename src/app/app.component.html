@@ -33,12 +33,12 @@
     <div>
         <div *ngIf="showmap; else elseBlock">
             <div class="content mb-5">
-                <app-map></app-map> 
+                <app-map (mapEvent) ="getWeather($event)"></app-map> 
             </div>
         </div>
         <ng-template #elseBlock>
             <div class="content mb-5">
-                <app-weather></app-weather>
+                <app-weather [cord] = "cordinates"></app-weather>
             </div>
         </ng-template>
         

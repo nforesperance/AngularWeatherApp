@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit,Output, EventEmitter,Component } from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
@@ -7,28 +7,27 @@ import * as L from 'leaflet';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
-  @Output() onClick = new EventEmitter<boolean>();
-    setHide(){
-       this.onHide.emit(true);
-    }
+  @Output() public mapEvent = new EventEmitter();
   private map;
   private tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
      });
-
+  
+     
   constructor() {
    }
 
   ngAfterViewInit(): void {
     this.initMap()
     this.tiles.addTo(this.map);
-    this.map.on('click', function(e){
+    this.map.on('click', e =>{
       var coord = e.latlng;
       var lat = coord.lat;
       var lng = coord.lng;
-      console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+      this.mapEvent.emit({lat:lat,lon:lng})
       });
+    
   }
   private initMap(): void {
     this.map = L.map('map', {
