@@ -7,6 +7,10 @@ import * as L from 'leaflet';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
+  @Output() onClick = new EventEmitter<boolean>();
+    setHide(){
+       this.onHide.emit(true);
+    }
   private map;
   private tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,

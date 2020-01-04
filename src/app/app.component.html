@@ -9,33 +9,39 @@
 </head>
 <body>
    <nav class="navbar navbar-light bg-light">   
-   
-          <span class="caret">
-              <i class="fa fa-search" aria-hidden="true"></i>         
-              Search</span>
-     
-        <div class="dropdown">
-                <a class="btn btn-default dropdown-toggle" type="a" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <span class="caret">
-                            <i class="fa fa-search" aria-hidden="true"></i>         
-                            Search</span>
-                </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li>
-                <div class="map-section mt-5">
-                    <!-- <app-map></app-map>  -->
-                    <p>Tsts</p>
-                  </div>
-            </li>
-            
-          </ul>
-        </div>
+      <button (click)="showmap = !showmap" class="btn btn-info">
+        <span class="caret">
+            <i class="fa fa-search" aria-hidden="true"></i>{{showmap ? 'Weather' : 'Search'}}
+        </span>
+      </button>
+      <div class="dropdown">
+              <a class="btn btn-default dropdown-toggle" type="a" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <span class="caret">
+                          <i class="fa fa-search" aria-hidden="true"></i>         
+                          Profile</span>
+              </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li>
+              <div class="map-section mt-5">
+                  <p>Profile Infor</p>
+                </div>
+          </li>
+          
+        </ul>
+      </div>
 </nav>
     <div>
-        <div class="content mb-5">
-            <app-weather></app-weather>
-            <!-- <app-map></app-map>  -->
+        <div *ngIf="showmap; else elseBlock">
+            <div class="content mb-5">
+                <app-map></app-map> 
+            </div>
         </div>
+        <ng-template #elseBlock>
+            <div class="content mb-5">
+                <app-weather></app-weather>
+            </div>
+        </ng-template>
+        
         
     </div>
   
