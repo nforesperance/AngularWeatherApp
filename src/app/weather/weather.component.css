@@ -66,6 +66,9 @@
 #temperature {
 	font-size:5rem;
 }
+#temperature >p{
+	font-size:2rem;
+}
 
 #icon-thermometer {
 	font-size: 5rem;
