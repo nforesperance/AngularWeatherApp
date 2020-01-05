@@ -25,7 +25,7 @@ export class MapComponent implements AfterViewInit {
       var coord = e.latlng;
       var lat = coord.lat;
       var lng = coord.lng;
-      this.mapEvent.emit({lat:lat,lon:lng})
+      this.mapEvent.emit({lat:lat,lng:lng,showmap:false})
       });
     
   }
