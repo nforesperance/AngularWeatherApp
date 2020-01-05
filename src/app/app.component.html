@@ -38,7 +38,7 @@
         </div>
         <ng-template #elseBlock>
             <div class="content mb-5">
-                <app-weather [cord] = "cordinates"></app-weather>
+                <app-weather (hideMap) = "showWeather($event)" [cord]="response"></app-weather>
             </div>
         </ng-template>
         

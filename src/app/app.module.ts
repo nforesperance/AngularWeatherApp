@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { WeatherComponent } from './weather/weather.component';
+import { ServeService } from './services/serve.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { WeatherComponent } from './weather/weather.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ServeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
