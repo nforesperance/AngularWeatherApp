@@ -21,6 +21,10 @@ export class WeatherComponent implements OnInit,AfterViewInit {
   public dayNight 
   public icon
   public name 
+  public vis;
+  public temp_min;
+  public temp_max;
+  public feels_like;
   constructor() { }
   ngOnInit(){
     console.log(this.jsonWeather);
@@ -40,6 +44,14 @@ export class WeatherComponent implements OnInit,AfterViewInit {
    this.dayNight = (this.timeNow < this.sunSet) ? "day" : "night";
     this.name = this.jsonWeather.name 
     this.icon =`${this.dayNight}-${this.id}`
+    this.vis = Number.isNaN(this.visibility)
+    number = (this.jsonWeather.main.temp_min)-273
+    this.temp_min =  Math.round( number * 10 ) / 10;
+    number = (this.jsonWeather.main.temp_max)-273
+    this.temp_max =  Math.round( number * 10 ) / 10;
+    number = (this.jsonWeather.main.feels_like)-273
+    this.feels_like =  Math.round( number * 10 ) / 10;
+    
   }
   ngAfterViewInit() {  
   

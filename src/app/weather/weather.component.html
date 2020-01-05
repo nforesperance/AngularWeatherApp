@@ -3,7 +3,7 @@
 		<nav class="navbar">
 		  <a class="navbar-brand" href="#">
 		    <i class="fa fa-sun-o" aria-hidden="true"></i>
-		    <strong>Local</strong>Weather
+		    <strong>Weather</strong>App
 		  </a>
 		  <span id="date" class="lead">11:00AM | Mar 3, 2018</span>
 		</nav>
@@ -15,13 +15,14 @@
 					<div class="weather-head">
 						<h1 id="location" class="text-center display-4">{{name}}</h1>
 						<div class="row">							
-							<div id="description" class="description col-6 text-center">
+							<div id="description" class="description col-4 text-center">
 								<i id="icon-desc" class="wi wi-owm-{{icon}}"></i>
 								<p class="desc">{{desc}}</p>			
 							</div>
-							<div id="temperature" class="col-6 text-center">
+							<div id="temperature" class="col-8 text-center">
 								{{temp}} &deg;C
-								<!-- <i id="icon-thermometer" class="wi wi-thermometer"></i>					 -->
+								<!-- <i id="icon-thermometer" class="wi wi-thermometer"></i> -->
+								<p class="">{{temp_max}}&deg;/{{temp_min}}&deg; Feels  Like {{feels_like}}&deg;</p>	
 							</div>	
 						</div>
 						<!-- weather body header -->
@@ -46,7 +47,7 @@
 									{{windSpeed}}mph
 								</div>
 								<div id="visibility" class="degree-data col-4 text-center">
-								{{visibility}}
+										{{vis ? "clear" : visibility }}{{vis ? "" : "Miles" }} 
 								</div>
 							</div>
 						</div>						
