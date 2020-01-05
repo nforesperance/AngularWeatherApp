@@ -23,6 +23,8 @@ export class WeatherComponent implements OnInit,AfterViewInit {
   public name 
   constructor() { }
   ngOnInit(){
+    console.log(this.jsonWeather);
+    
     this.desc = this.jsonWeather.weather[0].description;
     this.desc = this.desc[0].toUpperCase() + this.desc.slice(1)
    this.id = this.jsonWeather.weather[0].id;

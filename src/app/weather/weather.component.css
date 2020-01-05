@@ -30,6 +30,8 @@
 .navbar a {
 	color: white;
 	font-size: 25px;
+	/* z-index: 6;
+    margin-top: 54px; */
 }
 
 /* weather section */
@@ -62,7 +64,7 @@
 }
 
 #temperature {
-	font-size: 7rem;
+	font-size:5rem;
 }
 
 #icon-thermometer {

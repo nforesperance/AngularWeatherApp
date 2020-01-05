@@ -1,3 +1,7 @@
 .content{
     z-index: -1;
 }
+.navbar{
+    z-index: 5;
+    margin-top: 50px;
+}
