@@ -27,10 +27,24 @@ export class WeatherComponent implements OnInit,AfterViewInit {
   public temp_max;
   public feels_like;
   public country;
+
+  public days;
+  public list
+  public txt
+
   constructor() { }
   ngOnInit(){
-    console.log(this.jsonWeather);
     this.jsonWeather = this.res.current
+    this.list =  this.res.days.list
+    this.txt = "2020-01-06"
+    this.getWeatherInfo()
+    //this will sent to day
+    
+  }
+  ngAfterViewInit() {  
+  
+  }  
+  getWeatherInfo(){
     this.desc = this.jsonWeather.weather[0].description;
     this.desc = this.desc[0].toUpperCase() + this.desc.slice(1)
    this.id = this.jsonWeather.weather[0].id;
@@ -54,10 +68,6 @@ export class WeatherComponent implements OnInit,AfterViewInit {
     number = (this.jsonWeather.main.feels_like)-273
     this.feels_like =  Math.round( number * 10 ) / 10;
     this.country = this.jsonWeather.sys.country;
-    
   }
-  ngAfterViewInit() {  
-  
-  }  
 
 }

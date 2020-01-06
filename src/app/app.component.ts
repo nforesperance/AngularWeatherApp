@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   private  appid = "appid=8e1880f460a20463565be25bc573bdc6";
   public response
   loading = false;
-  load1 = false
+  load1 = true
   constructor(
     private http: HttpClient, private _serve:ServeService
   ){}
@@ -24,27 +24,27 @@ export class AppComponent implements OnInit {
       });
   }
   getWeather(event){
-    // this.loading = false
-    //    let url1 = `http://api.openweathermap.org/data/2.5/weather?lat=${event.lat}&lon=${event.lng}&${this.appid}`;
-    //    let url2 = `http://api.openweathermap.org/data/2.5/forecast?lat=${event.lat}&lon=${event.lng}&${this.appid}`;
-    // let url3 =url1
-    // this.http.get(url1).toPromise()
-    //   .then(current =>{
-    //     this.http.get(url2).toPromise()
-    //       .then(day =>{
-    //               this.response = {current:current,day:day}   
-    //               console.log(this.response);
+    this.loading = true
+       let url1 = `http://api.openweathermap.org/data/2.5/weather?lat=${event.lat}&lon=${event.lng}&${this.appid}`;
+       let url2 = `http://api.openweathermap.org/data/2.5/forecast?lat=${event.lat}&lon=${event.lng}&${this.appid}`;
+    let url3 =url1
+    this.http.get(url1).toPromise()
+      .then(current =>{
+        this.http.get(url2).toPromise()
+          .then(day =>{
+                  this.response = {current:current,days:day}   
+                  console.log(this.response);
                    
-    //               this.showmap = false  
-    //               this.loading = false;
-    //               this.load1 = false  
-    //       })
-    //       .catch(err =>{
-    //         console.log("error");       
-    //       })  
-    //   })
-    //   .catch(err =>{
-    //     console.log("error");       
-    //   })
+                  this.showmap = false  
+                  this.loading = false;
+                  this.load1 = false  
+          })
+          .catch(err =>{
+            console.log("error");       
+          })  
+      })
+      .catch(err =>{
+        console.log("error");       
+      })
   }
 }

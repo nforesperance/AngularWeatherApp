@@ -6,12 +6,25 @@
     text-align: center;
     font-size: 18px;
     background: #fff;
-    max-width: 200px !important;
+    max-width: 150px !important;
   }
   .item{
-    margin-left: 20px;
+    /* margin-bottom: 5px; */
+    max-width: 150px !important;
   }
   .container1{
    min-width: 30%;
-    
+}
+.weather {
+	border:1px solid white;
+	background-color: rgb(43, 70, 93);
+	border-radius: 10px;
+  color: white;
+  margin-left:auto !important ;
+}
+p.text-center{
+  font-size: 1.5rem;
+}
+#icon-desc{
+  font-size: 3rem;
 }

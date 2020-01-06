@@ -71,15 +71,14 @@
 
 
 /* style for the navs */
-ul >li.nav-item{
+/* ul >li.nav-item{
   background-color: rgb(36, 113, 165);
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-}
+} */
 ul >li.nav-item button{
 	min-width: 100% !important;
-	min-height: 100% !important;
 	font-size: 1.5rem;
 	font-weight: bold;
   }
