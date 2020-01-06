@@ -9,11 +9,12 @@ import Swiper from 'swiper';
 export class DayComponent implements OnInit,AfterViewInit{
   @Input('cord') public list
   @Input('txt') public txt
+  @Input('centered') public centered
   mySwiper: Swiper;
   appendNumber
    prependNumber 
-
-  slides 
+   
+  public current = true
 
 	public id
   public sunSet 
@@ -35,7 +36,7 @@ export class DayComponent implements OnInit,AfterViewInit{
     this.prependNumber =1
 		this.mySwiper = new Swiper('.swiper-container', {
 		  slidesPerView:'auto',
-		  centeredSlides: true,
+		  centeredSlides: this.centered,
 		  spaceBetween: 30,
 		  loop: true,
 		  // autoplay: {

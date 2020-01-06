@@ -1,12 +1,12 @@
 <div class="hero">
 		<!-- navbar -->
 		<!-- weather section  -->
-		<div class="container">
+		<div class="container" *ngIf="current">
 			<div class="row">
 				<div id="" class="col-8 mx-auto weather">
 					<!-- weather header section -->
 					<div class="weather-head">
-						<h1 id="location" class="text-center display-4">{{name}} {{coountry}}</h1>
+						<h1 id="location" class="text-center display-4">{{name}}, {{country}}</h1>
 						<div class="row">							
 							<div id="description" class="description col-4 text-center">
 								<i id="icon-desc" class="wi wi-owm-{{icon}}"></i>
@@ -53,14 +53,32 @@
 				<div id="" class="col-8 mx-auto weather">
 						<div class="mb-2">
 								<ul class="nav nav-pills nav-justified mb-2">
-										<li class="nav-item active">
-										 <button class="btn btn-primary">Today</button>
-										</li>
-										<li class="nav-item">
-										 <button class="btn btn-primary">Weekly</button>						
-										</li>
-									  </ul>
-								<app-day [cord]="list" [txt]="'2020-01-06'"></app-day>
+								<li class="nav-item" [ngClass]="{'active' : current}">
+									<button (click)="current = true" class="btn btn-primary">Hourly Forecast</button>
+								</li>
+								<li class="nav-item"[ngClass]="{'active' : !current}">
+									<button (click)="current = false" class="btn btn-primary">Weekly Forecast</button>						
+								</li>
+								</ul>
+								<div *ngIf="current; else elseBlock">
+								<section>
+									<div class="mb-2 day">{{day(list[0].dt_txt.substring(0,10))}}</div>
+								</section>
+									<div *ngIf="list[0].dt_txt.substring(0,10); let vari" > 
+									<app-day [cord]="list" [txt]="vari"  [centered]="true"></app-day>
+									</div>
+								</div>
+							<ng-template #elseBlock>
+										<div class="" *ngFor="let item of slides">
+											<div class="container">
+												<section>
+													<div class="mb-2 day">{{day(item)}}</div>
+												</section> 
+												<app-day [cord]="list" [txt]="item" [centered]="false"></app-day>
+											</div>
+											
+										</div>
+							</ng-template>
 						</div>
 				</div>
 			</div>	

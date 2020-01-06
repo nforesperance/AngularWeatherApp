@@ -38,6 +38,36 @@ export class AppComponent implements OnInit {
                   this.showmap = false  
                   this.loading = false;
                   this.load1 = false  
+                let dum =  new Date('2020.01.05').getTime() / 1000;
+                console.log(dum);
+                
+          })
+          .catch(err =>{
+            console.log("error");       
+          })  
+      })
+      .catch(err =>{
+        console.log("error");       
+      })
+  }
+  getWeather1(event){
+    this.loading = true
+       let url1 = `https://api.darksky.net/forecast/0207b907a2bb4c9fa5065494935d5dda/${event.lat},${event.lng},1578264330?exclude=flags`;
+       let url2 = `http://api.openweathermap.org/data/2.5/forecast?lat=&lon=&${this.appid}`;
+    let url3 =url1
+    this.http.get(url1).toPromise()
+      .then(current =>{
+        this.http.get(url2).toPromise()
+          .then(day =>{
+                  this.response = {current:current,days:day}   
+                  console.log(this.response);
+                   
+                  this.showmap = false  
+                  this.loading = false;
+                  this.load1 = false  
+                let dum =  new Date('2012.08.10').getTime() / 1000;
+                console.log(dum);
+                
           })
           .catch(err =>{
             console.log("error");       

@@ -1,13 +1,12 @@
-.content{
+/* .content{
     z-index: -1;
-}
+} */
 /* .navbar{
     z-index: 5;
     margin-top: 50px;
 } */
 .loader{
     position: relative;
-    z-index: 99 !important;
     margin-top: 0px;
     padding-left: 42%;
     padding-bottom: 20%;
