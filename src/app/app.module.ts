@@ -11,13 +11,15 @@ import { DayComponent } from './weather/day/day.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     WeatherComponent,
     DayComponent,
-    LoginFormComponent
+    LoginFormComponent,
+   
   ],
   imports: [
     BrowserModule,
