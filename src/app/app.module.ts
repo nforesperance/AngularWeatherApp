@@ -8,6 +8,7 @@ import { MapComponent } from './map/map.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ServeService } from './services/serve.service';
 import { DayComponent } from './weather/day/day.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DayComponent } from './weather/day/day.component';
     AppComponent,
     MapComponent,
     WeatherComponent,
-    DayComponent
+    DayComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
