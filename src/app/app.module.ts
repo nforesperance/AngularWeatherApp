@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ServeService } from './services/serve.service';
+import { DayComponent } from './weather/day/day.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    WeatherComponent
+    WeatherComponent,
+    DayComponent
   ],
   imports: [
     BrowserModule,
