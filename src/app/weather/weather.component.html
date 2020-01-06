@@ -1,19 +1,12 @@
 <div class="hero">
 		<!-- navbar -->
-		<nav class="navbar">
-		  <a class="navbar-brand" href="#">
-		    <i class="fa fa-sun-o" aria-hidden="true"></i>
-		    <strong>Weather</strong>App
-		  </a>
-		  <span id="date" class="lead">11:00AM | Mar 3, 2018</span>
-		</nav>
 		<!-- weather section  -->
 		<div class="container">
 			<div class="row">
 				<div id="" class="col-8 mx-auto weather">
 					<!-- weather header section -->
 					<div class="weather-head">
-						<h1 id="location" class="text-center display-4">{{name}}</h1>
+						<h1 id="location" class="text-center display-4">{{name}} {{coountry}}</h1>
 						<div class="row">							
 							<div id="description" class="description col-4 text-center">
 								<i id="icon-desc" class="wi wi-owm-{{icon}}"></i>
@@ -47,13 +40,22 @@
 									{{windSpeed}}mph
 								</div>
 								<div id="visibility" class="degree-data col-4 text-center">
-										{{vis ? "clear" : visibility }}{{vis ? "" : "Miles" }} 
+										{{vis ? "clear" : visibility }}{{vis ? "" : " Miles" }} 
 								</div>
 							</div>
 						</div>						
 					</div>					
-				</div>
+				</div>				
 			</div>
-		</div>		
+		</div>	
+		<div class="container1">
+				<div class="row">
+				<div id="" class="col-8 mx-auto weather">
+						<div>
+								<app-day></app-day>
+						</div>
+				</div>
+			</div>	
 	</div>
+</div>
 	

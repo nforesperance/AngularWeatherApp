@@ -13,7 +13,7 @@
 
 /* background color on top of bg image*/
 .hero {
-    position: absolute;
+    position: inherit;
     min-height: 100vh;
     min-width: 100vw;
     top: 0;
@@ -22,17 +22,6 @@
     z-index: -5;
 }
 
-/* navbar */
-.navbar {
-	background-color: rgb(69, 106, 171);
-}
-
-.navbar a {
-	color: white;
-	font-size: 25px;
-	/* z-index: 6;
-    margin-top: 54px; */
-}
 
 /* weather section */
 .weather {
@@ -81,3 +70,22 @@
 }
 
 
+/* style for the navs */
+ul >li.nav-item{
+  background-color: rgb(36, 113, 165);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+ul >li.nav-item button{
+	min-width: 100% !important;
+	min-height: 100% !important;
+	font-size: 1.5rem;
+	font-weight: bold;
+  }
+  ul >li.nav-item.active button{
+	background-color: rgb(4, 107, 167);
+  }
+  ul.nav{
+	border-radius: 3px;
+  }

@@ -6,7 +6,8 @@ import { Component,Inject, OnInit,AfterViewInit,Input } from '@angular/core';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit,AfterViewInit {
-  @Input('cord') public jsonWeather
+  @Input('cord') public res
+  public jsonWeather
   public response;
 	public desc 
 	public id 
@@ -25,10 +26,11 @@ export class WeatherComponent implements OnInit,AfterViewInit {
   public temp_min;
   public temp_max;
   public feels_like;
+  public country;
   constructor() { }
   ngOnInit(){
     console.log(this.jsonWeather);
-    
+    this.jsonWeather = this.res.current
     this.desc = this.jsonWeather.weather[0].description;
     this.desc = this.desc[0].toUpperCase() + this.desc.slice(1)
    this.id = this.jsonWeather.weather[0].id;
@@ -51,6 +53,7 @@ export class WeatherComponent implements OnInit,AfterViewInit {
     this.temp_max =  Math.round( number * 10 ) / 10;
     number = (this.jsonWeather.main.feels_like)-273
     this.feels_like =  Math.round( number * 10 ) / 10;
+    this.country = this.jsonWeather.sys.country;
     
   }
   ngAfterViewInit() {  

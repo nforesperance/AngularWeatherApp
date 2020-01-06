@@ -8,28 +8,32 @@
   <title>Document</title>
 </head>
 <body>
-   <nav class="navbar navbar-light bg-light">   
-      <button (click)="showmap = !showmap" class="btn btn-info">
-        <span class="caret">
-            <i class="fa fa-search" aria-hidden="true"></i>{{showmap ? 'Weather' : 'Search'}}
-        </span>
+
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <i class="fa fa-sun-o" aria-hidden="true"></i>
+          <strong>Weather</strong>App
+        </a>
+        <div class="dropdown">
+            <a class="btn btn-default dropdown-toggle" type="a" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="caret">         
+                        Profile</span>
+            </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li>
+            <div class="map-section mt-5">
+                <p>Profile Infor</p>
+              </div>
+        </li>
+        
+      </ul>
+    </div>
+      </nav>
+
+      <button (click)="showmap = !showmap" class="m-3 btn btn-lg btn-info">
+          {{showmap ? 'Weather' : 'Search'}} <i class="fa fa-search" aria-hidden="true"></i>
       </button>
-      <div class="dropdown">
-              <a class="btn btn-default dropdown-toggle" type="a" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <span class="caret">
-                          <i class="fa fa-search" aria-hidden="true"></i>         
-                          Profile</span>
-              </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li>
-              <div class="map-section mt-5">
-                  <p>Profile Infor</p>
-                </div>
-          </li>
-          
-        </ul>
-      </div>
-</nav>
+
     <div>
             <div class="loader" *ngIf="loading || load1; else showBlock">
                     <img  src="assets/img/Spinner-1s-237px.gif" alt="">

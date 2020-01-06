@@ -1,0 +1,17 @@
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    max-width: 200px !important;
+  }
+  .item{
+    margin-left: 20px;
+  }
+  .container1{
+   min-width: 30%;
+    
+}
