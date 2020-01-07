@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { ServeService } from './services/serve.service';
 
 @Component({
@@ -20,7 +20,9 @@ export class AppComponent implements OnInit {
   ){}
   ngOnInit(){
     this._serve.getPosition().then(pos=> {
+        this.getWeather1(pos)
         this.getWeather(pos)
+        
       });
   }
   getWeather(event){
@@ -37,9 +39,7 @@ export class AppComponent implements OnInit {
                    
                   this.showmap = false  
                   this.loading = false;
-                  this.load1 = false  
-                let dum =  new Date('2020.01.05').getTime() / 1000;
-                console.log(dum);
+                  this.load1 = false;
                 
           })
           .catch(err =>{
@@ -52,29 +52,17 @@ export class AppComponent implements OnInit {
   }
   getWeather1(event){
     this.loading = true
-       let url1 = `https://api.darksky.net/forecast/0207b907a2bb4c9fa5065494935d5dda/${event.lat},${event.lng},1578264330?exclude=flags`;
-       let url2 = `http://api.openweathermap.org/data/2.5/forecast?lat=&lon=&${this.appid}`;
-    let url3 =url1
-    this.http.get(url1).toPromise()
-      .then(current =>{
-        this.http.get(url2).toPromise()
-          .then(day =>{
-                  this.response = {current:current,days:day}   
-                  console.log(this.response);
-                   
-                  this.showmap = false  
-                  this.loading = false;
-                  this.load1 = false  
-                let dum =  new Date('2012.08.10').getTime() / 1000;
-                console.log(dum);
-                
-          })
-          .catch(err =>{
-            console.log("error");       
-          })  
-      })
-      .catch(err =>{
-        console.log("error");       
-      })
+       let url = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/0207b907a2bb4c9fa5065494935d5dda/${event.lat},${event.lng},1578264330?exclude=flags`;
+     return this.http.get(url, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin":"*"
+      }),
+    }).toPromise()
+    .then(data =>{
+      console.log(data)     
+    })
+    .catch(err =>console.log(err)
+    )
   }
 }
