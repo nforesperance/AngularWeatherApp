@@ -8,8 +8,6 @@ import { MapComponent } from './map/map.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ServeService } from './services/serve.service';
 import { DayComponent } from './weather/day/day.component';
-import { DarkwComponent } from './darkw/darkw.component';
-import { DarkdComponent } from './darkw/darkd/darkd.component';
 
 
 @NgModule({
@@ -18,8 +16,6 @@ import { DarkdComponent } from './darkw/darkd/darkd.component';
     MapComponent,
     WeatherComponent,
     DayComponent,
-    DarkwComponent,
-    DarkdComponent
   ],
   imports: [
     BrowserModule,
