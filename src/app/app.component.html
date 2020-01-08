@@ -30,7 +30,7 @@
     </div>
       </nav>
 
-      <app-search (mapEvent) ="getWeather($event)"></app-search>
+      <div class="d-flex justify-content-center"><app-search (mapEvent) ="getWeather($event)"></app-search></div>
 
       <button (click)="showmap = !showmap" class="m-3 btn btn-lg btn-info">
           {{showmap ? 'Weather' : 'Search'}} <i class="fa fa-search" aria-hidden="true"></i>
