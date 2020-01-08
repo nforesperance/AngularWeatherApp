@@ -22,9 +22,9 @@ export class MapComponent implements AfterViewInit {
     this.initMap()
     this.tiles.addTo(this.map);
     this.map.on('click', e =>{
-      var coord = e.latlng;
-      var lat = coord.lat;
-      var lng = coord.lng;
+      let coord = e.latlng;
+      let lat = coord.lat;
+      let lng = coord.lng;
       this.mapEvent.emit({lat:lat,lng:lng,showmap:false})
       });
     
