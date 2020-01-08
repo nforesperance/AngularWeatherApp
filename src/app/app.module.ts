@@ -9,7 +9,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { ServeService } from './services/serve.service';
 import { DayComponent } from './weather/day/day.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -19,12 +20,15 @@ import { LoginFormComponent } from './login-form/login-form.component';
     WeatherComponent,
     DayComponent,
     LoginFormComponent,
+    HomeComponent,
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+   
   ],
   providers: [ServeService],
   bootstrap: [AppComponent]

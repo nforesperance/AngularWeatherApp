@@ -1,0 +1,28 @@
+.content{
+    z-index: -1;
+}
+/* .navbar{
+    z-index: 5;
+    margin-top: 50px;
+} */
+.loader{
+    position: relative;
+    z-index: 99 !important;
+    margin-top: 0px;
+    padding-left: 42%;
+    padding-bottom: 20%;
+    padding-top: 15%;
+    /* background-color: rgba(13, 91, 155, 0.335); */
+}
+/* navbar */
+.navbar {
+	background-color: rgb(69, 106, 171);
+}
+
+.navbar a {
+	color: white;
+	font-size: 25px;
+	/* z-index: 6;
+    margin-top: 54px; */
+}
+

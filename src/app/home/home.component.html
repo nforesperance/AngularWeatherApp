@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <i class="fa fa-sun-o" aria-hidden="true"></i>
+          <strong>Weather</strong>App
+        </a>
+        <div class="dropdown">
+            <a class="btn btn-default dropdown-toggle" type="a" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="caret">         
+                        Profile</span>
+            </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li>
+            <div class="map-section mt-5">
+                <p>Profile Infor</p>
+              </div>
+        </li>
+        
+      </ul>
+    </div>
+      </nav>
+
+      <button (click)="showmap = !showmap" class="m-3 btn btn-lg btn-info">
+          {{showmap ? 'Weather' : 'Search'}} <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+
+    <div>
+            <div class="loader" *ngIf="loading || load1; else showBlock">
+                    <img  src="assets/img/Spinner-1s-237px.gif" alt="">
+           </div>
+           <ng-template #showBlock>
+                    <div *ngIf="showmap; else elseBlock">
+                            <div class="content mb-5">
+                                <app-map (mapEvent) ="getWeather($event)"></app-map> 
+                            </div>
+                        </div>
+                        <ng-template #elseBlock>
+                            <div class="content mb-5">
+                                <app-weather (hideMap) = "showWeather($event)" [cord]="response"></app-weather>
+                            </div>
+                        </ng-template>
+
+            </ng-template>
+        
+        
+    </div>
+  
+</body>
+</html>
