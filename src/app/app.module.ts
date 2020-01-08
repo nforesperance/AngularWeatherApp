@@ -8,6 +8,10 @@ import { MapComponent } from './map/map.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ServeService } from './services/serve.service';
 import { DayComponent } from './weather/day/day.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -15,12 +19,20 @@ import { DayComponent } from './weather/day/day.component';
     AppComponent,
     MapComponent,
     WeatherComponent,
-    DayComponent
+    DayComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatSnackBarModule,
   ],
   providers: [ServeService],
   bootstrap: [AppComponent]
