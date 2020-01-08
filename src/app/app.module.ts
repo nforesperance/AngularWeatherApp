@@ -11,6 +11,7 @@ import { DayComponent } from './weather/day/day.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HomeComponent } from './home/home.component';
     DayComponent,
     LoginFormComponent,
     HomeComponent,
+    SignupComponent,
    
   ],
   imports: [

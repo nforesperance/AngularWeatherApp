@@ -1,0 +1,25 @@
+<body>
+
+    <div class="monForm">
+      <h2>Sign up</h2>
+      
+      <label class="hoverable" for="fileInput">
+        <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+      </label>
+      <br/>
+      <input id="fileInput" type='file' (change)="onSelectFile($event)">
+      
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <p>Utilisateur</p>
+          <input type="text" name="username" placeholder="nom d'utilisateur" ngModel>
+          <p>Mot de passe</p>
+          <input type="password" placeholder="votre mot de passe" name="password" ngModel>
+          <p>Confirmation</p>
+          <input type="password" placeholder="confirme mot de passe" name="confirmpassword" ngModel>
+
+        <input type="submit" value="Signup" >
+      
+        </form>
+  </div>
+  </body>
+    

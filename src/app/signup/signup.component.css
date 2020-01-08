@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    padding: 0;
+   
+}
+body:before{
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/assets/img/fond.jpg");
+    background-position:center  ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size:cover;
+    background-size: cover;
+   -webkit-filter: blur(10px);
+    -moz-filter:blur(10px);
+    filter:
+}
+.monForm {
+    position:absolute;
+    top:50%;
+    left:50%;
+     -webkit-transform: translate(-50%,-50%);
+     -moz-transform: translate(-50%,-50%);
+     -ms-transform: translate(-50%, -50%);
+     -o-transform: translate(-50%, -50%);
+     transform: translate(-50%,-50%);
+    width:410px; /* A toi de donner la bonne largeur */
+    height:509px; /* A toi de donner la bonne hauteur */
+    padding: 90px 40px;
+    background: rgba(0,0,0,0.6);
+    
+    
+ }
+
+ img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+ }
+ .hoverable{
+    position:absolute;
+     width: 120px;
+     height: 110px;
+     border-radius: 80%;
+     overflow: hidden;
+     top: calc(-80px/2);
+     left: calc(50% - 40px);
+ }
+ .monForm.hoverable .background{
+    position: absolute;
+    display: none;
+    top: 0;
+    left:  0;
+    bottom: 0;
+    right: 0;
+    background-color:rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .monForm.hoverable:hover .hover-text{
+    display: block;
+  }
+
+.monForm.hoverable:hover .background{
+    display: block;
+  }
+  .monForm input[type='file']{
+    display: none;
+  }
+/* .avatar{
+     position:absolute;
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+     overflow: hidden;
+     top: calc(-80px/2);
+     left: calc(50% - 40px);
+ }*/
+ .monForm h2 {
+     margin: 0;
+     padding: 0 0 20px;
+     color: #fff;
+     text-align: center;
+     text-transform: uppercase;
+
+ }
+
+ .monForm p {
+     margin: 0;
+     padding: 0;
+     font-weight: bold;
+     color: #fff;
+ }
+
+ .monForm input {
+     width: 100%;
+     margin-bottom: 20px;
+ }
+ .monForm input[type="text"], input[type="password"] {
+     border: none;
+     border-bottom: 1px solid #fff;
+     background: transparent;
+     outline: none;
+     height: 35px;
+     color: #fff;
+     font-size: 15px;
+ }
+ .monForm input[type="submit"]{
+     height: 30px;
+     color: #fff;
+     font-size: 15px;
+     background:green;
+     cursor: pointer;
+     border-radius: 25px;
+     border: none;
+     outline: none;
+     margin-top:8%
+
+ } 
+
