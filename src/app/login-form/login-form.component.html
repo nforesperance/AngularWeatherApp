@@ -6,9 +6,9 @@
 
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <p>Utilisateur</p>
-        <input type="text" name="username" placeholder="nom d'utilisateur" ngModel>
+        <input type="text" name="username" placeholder="nom d'utilisateur" required ngModel>
         <p>Mot de passe</p>
-        <input type="password" placeholder="votre mot de passe" name="password" ngModel>
+        <input type="password" placeholder="votre mot de passe" name="password" required ngModel>
       <input type="submit" value="Signin" >
       <input type="button" value="Signup">
       </form>
