@@ -15,6 +15,24 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { NgxIndexedDBModule ,DBConfig} from 'ngx-indexed-db';
+
+const dbConfig: DBConfig  = {
+  name: 'Users',
+  version: 1,
+  objectStoresMeta: [{
+    store: 'Users',
+    storeConfig: { keyPath: 'id', autoIncrement: true },
+    storeSchema: [
+      { name: 'name', keypath: 'name', options: { unique: false } },
+      { name: 'username', keypath: 'username', options: { unique: true }},
+      { name: 'password', keypath: 'password', options: { unique: true } },
+      { name: 'image', keypath: 'image', options: { unique: false } },
+      { name: 'sexe', keypath: 'sexe', options: { unique: false } },
+      { name: 'birthday', keypath: 'birthday', options: { unique: false } }
+    ]
+  }]
+};
 
 @NgModule({
   declarations: [
@@ -34,6 +52,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgxIndexedDBModule.forRoot(dbConfig),
   ],
   providers: [ServeService],
   bootstrap: [AppComponent]

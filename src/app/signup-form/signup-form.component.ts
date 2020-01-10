@@ -22,7 +22,7 @@ export class SignupFormComponent implements OnInit {
   }
 
 
-public nom; username; password; sexe; birthday;
+public nom; username; password; sexe; date;
 public url: string | ArrayBuffer;
 public image: string;
 public file: Blob;
@@ -50,19 +50,14 @@ public file: Blob;
 
     this.image = event.target.result;
     console.log(event.target.result);
-
-    if(this.password === this.confirm) {
       
-      this.dbService.add({ name: this.nom, username:this.username, password:this.password, image:this.image}).then(
+      this.dbService.add({ name: this.nom, username:this.username, password:this.password, image:this.image, sexe: this.sexe, date: this.date}).then(
       () => {
           console.log('ajouté avec succès');
       },
       error => {
           console.log("echec");
       });
-    } else {
-      console.log("Vérifier le mot de passse");
-    }
 
   }
 
@@ -71,7 +66,8 @@ public file: Blob;
     this.username = form.value.username;
     this.password = form.value.password;
     this.nom = form.value.name;
-    this.confirm = form.value.confirm;
+    this.date = form.value.date;
+    this.sexe = form.value.sex;
 
     console.log(form.value);
     console.log(this.url);
