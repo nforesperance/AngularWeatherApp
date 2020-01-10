@@ -48,7 +48,7 @@ body:before{
      border-radius: 80%;
      overflow: hidden;
      top: calc(-80px/2);
-     left: calc(50% - 40px);
+     left: calc(50% - 60px);
  }
  .monForm.hoverable .background{
     position: absolute;
@@ -85,7 +85,7 @@ body:before{
      margin: 120px;
      padding: 0 0 20px;
      color: #fff;
-     text-align: center;
+     text-align: right;
 
  }
 
