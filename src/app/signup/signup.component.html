@@ -1,7 +1,7 @@
 <body>
 
     <div class="monForm">
-      <small>cliquez sur l'icone pour ajout la photo</small>
+      <small>upload picture</small>
       <label class="hoverable" for="fileInput">
         <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
       </label>
@@ -9,7 +9,7 @@
       <input id="fileInput" type='file' (change)="onSelectFile($event)">
       
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div>
+        <div class="eltform">
           <p>Nom et Prenom</p>
           <input type="text" name="name" placeholder="Entrez votre nom et prenom" required ngModel >
           <p>Nom d'utilisateur</p>

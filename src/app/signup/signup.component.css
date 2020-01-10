@@ -20,7 +20,7 @@ body:before{
 }
 .monForm {
     position:absolute;
-    top:50%;
+    top:60%;
     left:50%;
      -webkit-transform: translate(-50%,-50%);
      -moz-transform: translate(-50%,-50%);
@@ -34,6 +34,7 @@ body:before{
     
     
  }
+ 
 
  img {
     height: 100%;
@@ -81,7 +82,7 @@ body:before{
      left: calc(50% - 40px);
  }*/
  .monForm small {
-     margin: 50px;
+     margin: 120px;
      padding: 0 0 20px;
      color: #fff;
      text-align: center;
@@ -111,7 +112,9 @@ body:before{
 
  .monForm label {
     margin-top:10px;
-    display:block;}
+    display:block;
+    color:blanchedalmond;
+}
 .monForm label.inline {
     display:inline;
     margin-right:50px;
