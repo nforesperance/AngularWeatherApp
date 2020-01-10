@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 const routes: Routes = [
+<<<<<<< HEAD
   {
     path: '',
     redirectTo: 'signup',
@@ -14,6 +16,12 @@ const routes: Routes = [
   { path: "login", component: LoginFormComponent },
   { path: "home", component: HomeComponent },
   { path: "signup", component: SignupComponent },
+=======
+  {path:"login",component:LoginFormComponent},
+  {path:"home",component:HomeComponent},
+  {path:"signup",component:SignupComponent},
+  {path:"profil",component:ProfilComponent},
+>>>>>>> ajout de profil
 ];
 
 @NgModule({

@@ -14,11 +14,19 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupComponent } from './signup/signup.component';
+<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
 import { SearchComponent } from './search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+=======
+import { FormsModule } from '@angular/forms';
+import { NgxIndexedDBModule ,DBConfig} from 'ngx-indexed-db';
+import { ProfilComponent } from './profil/profil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+>>>>>>> ajout de profil
 
 const dbConfig: DBConfig = {
   name: 'Users',
@@ -49,7 +57,11 @@ const dbConfig: DBConfig = {
     NavbarComponent,
     LoginFormComponent,
     SignupComponent,
+<<<<<<< HEAD
     SearchComponent
+=======
+    ProfilComponent
+>>>>>>> ajout de profil
   ],
   imports: [
     BrowserModule,
@@ -57,12 +69,16 @@ const dbConfig: DBConfig = {
     HttpClientModule,
     FormsModule,
     NgxIndexedDBModule.forRoot(dbConfig),
+<<<<<<< HEAD
     MatFormFieldModule,
     MatAutocompleteModule,
     MatInputModule,
     MatSnackBarModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
+=======
+    BrowserAnimationsModule,
+>>>>>>> ajout de profil
   ],
   providers: [ServeService],
   bootstrap: [AppComponent]
