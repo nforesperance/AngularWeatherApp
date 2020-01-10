@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
     
   }
 
-  public user;
+  public user; // this will content the informations of the user who will connect if his connexion succeed
   
   onSubmit(form: NgForm){
     console.log(form.value);
@@ -33,7 +33,7 @@ export class LoginFormComponent implements OnInit {
           if (password === person.password){
             
             console.log('login réussi');
-            this.user = person;
+            this.user = person; // transfer the user information into user
             console.log(this.user);
             
           } else {
@@ -43,6 +43,7 @@ export class LoginFormComponent implements OnInit {
       error => {
           console.log('echec');
       }
+      //you will get the information of the connected user with the user objet
     );
 
   }
