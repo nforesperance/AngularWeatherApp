@@ -18,6 +18,8 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
     
   }
+
+  public user; // this will content the informations of the user who will connect if his connexion succeed
   
   onSubmit(form: NgForm){
     console.log(form.value);
@@ -31,6 +33,8 @@ export class LoginFormComponent implements OnInit {
           if (password === person.password){
             
             console.log('login réussi');
+            this.user = person; // transfer the user information into user
+            console.log(this.user);
             
           } else {
             console.log('echec de connexion')
@@ -39,6 +43,16 @@ export class LoginFormComponent implements OnInit {
       error => {
           console.log('echec');
       }
+      //you will get the information of the connected user with the user objet
+      //fuction to convert the image in order to use it. Notice that that function is written in js, you will try to write it in typescript
+
+      /*
+      let URL = window.URL|window.webkitURL;
+      var imgURL = URL.createObjectURL(user);
+      var imgElephant = document.getElementById("elephant");
+      imgElephant.setAttribute("src", imgURL);
+      */
+
     );
 
   }

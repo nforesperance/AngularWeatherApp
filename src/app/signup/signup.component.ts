@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
 
 public nom; username; password; sexe; date;
 public url: string | ArrayBuffer;
-public image: string;
+public image;
 public file: Blob;
 
 
@@ -46,35 +46,21 @@ public file: Blob;
     this.url = null;
   }
 
-  readFile(event) {
-
-    this.image = event.target.result;
-    console.log(event.target.result);
-
-  }
-
-
   onSubmit(form: NgForm){
     this.username = form.value.username;
     this.password = form.value.password;
     this.nom = form.value.name;
     this.date = form.value.date;
-    this.sexe = form.value.sex;
+    this.sexe = form.value.sexe;
 
     console.log(form.value);
-    console.log(this.url);
 
-    let reader = new FileReader();
-    reader.addEventListener('load', this.readFile);
-
-    this.dbService.add({ name: this.nom, username:this.username, password:this.password, image:this.image, sexe: this.sexe, date: this.date}).then(
+    this.dbService.add({ name: this.nom, username:this.username, password:this.password, image: this.file, sexe: this.sexe, date: this.date}).then(
       () => {
           console.log('ajouté avec succès');
       },
       error => {
           console.log(error);
       });
-
-    reader.readAsText(this.file);
   }
 }

@@ -10,19 +10,19 @@
       
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="eltform">
-          <p>Nom et Prenom</p>
-          <input type="text" name="name" placeholder="Entrez votre nom et prenom" required ngModel >
-          <p>Nom d'utilisateur</p>
-          <input type="text" name="username" placeholder="nom d'utilisateur" required ngModel >
-          <p>Date de Naissance</p>
-          <input type="date"  placeholder="votre date de Naissance" name="date" required  ngModel>
-          <p>Sexe</p>
+          <p>Name and Firstname</p>
+          <input type="text" name="name" placeholder="your name and Firstname" required ngModel >
+          <p>Username</p>
+          <input type="text" name="username" placeholder="your username" required ngModel >
+          <p>Birthday</p>
+          <input type="date"  placeholder="your birthday" name="date" required  ngModel>
+          <p>Sex</p>
           <input type="radio" name="sexe" value="masculin" id="masculin" required ngModel>
-     <label for="oui" class="inline">masculin</label>
+     <label for="oui" class="inline">male</label>
      <input type="radio" name="sexe" value="feminin" id="feminin" required ngModel />
-     <label for="non" class="inline">feminin</label>
-          <p>Mot de passe</p>
-          <input type="password" placeholder="votre mot de passe" name="password" required  ngModel>
+     <label for="non" class="inline">female</label>
+          <p>Password</p>
+          <input type="password" placeholder="your password" name="password" required  ngModel>
         <input type="submit" value="Signup" >
       </div>
         </form>

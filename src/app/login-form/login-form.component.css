@@ -76,7 +76,7 @@ body:before{
      height: 30px;
      color: #fff;
      font-size: 15px;
-     background: red;
+     background:blue;
      cursor: pointer;
      border-radius: 25px;
      border: none;
@@ -89,7 +89,7 @@ body:before{
     height: 30px;
     color: #fff;
     font-size: 15px;
-    background: blue;
+    background: green;
     cursor: pointer;
     border-radius: 25px;
     border: none;

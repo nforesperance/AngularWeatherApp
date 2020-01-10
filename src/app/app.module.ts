@@ -17,9 +17,9 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
 import { SearchComponent } from './search/search.component';
+import { ProfilComponent } from './profil/profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
-
 const dbConfig: DBConfig = {
   name: 'Users',
   version: 1,
@@ -49,7 +49,8 @@ const dbConfig: DBConfig = {
     NavbarComponent,
     LoginFormComponent,
     SignupComponent,
-    SearchComponent
+    SearchComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
