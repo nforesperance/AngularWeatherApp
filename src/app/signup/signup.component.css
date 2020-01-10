@@ -28,7 +28,7 @@ body:before{
      -o-transform: translate(-50%, -50%);
      transform: translate(-50%,-50%);
     width:410px; /* A toi de donner la bonne largeur */
-    height:590px; /* A toi de donner la bonne hauteur */
+    height:600px; /* A toi de donner la bonne hauteur */
     padding: 90px 40px;
     background: rgba(0,0,0,0.6);
     
@@ -80,12 +80,11 @@ body:before{
      top: calc(-80px/2);
      left: calc(50% - 40px);
  }*/
- .monForm h2 {
-     margin: 0;
+ .monForm small {
+     margin: 50px;
      padding: 0 0 20px;
      color: #fff;
      text-align: center;
-     text-transform: uppercase;
 
  }
 
