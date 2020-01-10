@@ -8,16 +8,19 @@ import { MapComponent } from './map/map.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ServeService } from './services/serve.service';
 import { DayComponent } from './weather/day/day.component';
-import {DarkwComponent } from './darkw/darkw.component';
-import {DarkdComponent } from './darkw/darkd/darkd.component';
+import { DarkwComponent } from './darkw/darkw.component';
+import { DarkdComponent } from './darkw/darkd/darkd.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupComponent } from './signup/signup.component';
-import { FormsModule } from '@angular/forms';
-import { NgxIndexedDBModule ,DBConfig} from 'ngx-indexed-db';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
+import { SearchComponent } from './search/search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
 
-const dbConfig: DBConfig  = {
+const dbConfig: DBConfig = {
   name: 'Users',
   version: 1,
   objectStoresMeta: [{
@@ -25,7 +28,7 @@ const dbConfig: DBConfig  = {
     storeConfig: { keyPath: 'id', autoIncrement: true },
     storeSchema: [
       { name: 'name', keypath: 'name', options: { unique: false } },
-      { name: 'username', keypath: 'username', options: { unique: true }},
+      { name: 'username', keypath: 'username', options: { unique: true } },
       { name: 'password', keypath: 'password', options: { unique: true } },
       { name: 'image', keypath: 'image', options: { unique: false } },
       { name: 'sexe', keypath: 'sexe', options: { unique: false } },
@@ -45,7 +48,8 @@ const dbConfig: DBConfig  = {
     HomeComponent,
     NavbarComponent,
     LoginFormComponent,
-    SignupComponent
+    SignupComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,12 @@ const dbConfig: DBConfig  = {
     HttpClientModule,
     FormsModule,
     NgxIndexedDBModule.forRoot(dbConfig),
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [ServeService],
   bootstrap: [AppComponent]
