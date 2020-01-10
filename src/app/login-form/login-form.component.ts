@@ -44,6 +44,15 @@ export class LoginFormComponent implements OnInit {
           console.log('echec');
       }
       //you will get the information of the connected user with the user objet
+      //fuction to convert the image in order to use it. Notice that that function is written in js, you will try to write it in typescript
+
+      /*
+      let URL = window.URL|window.webkitURL;
+      var imgURL = URL.createObjectURL(user);
+      var imgElephant = document.getElementById("elephant");
+      imgElephant.setAttribute("src", imgURL);
+      */
+
     );
 
   }
