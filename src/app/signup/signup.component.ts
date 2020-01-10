@@ -50,14 +50,6 @@ public file: Blob;
 
     this.image = event.target.result;
     console.log(event.target.result);
-      
-      this.dbService.add({ name: this.nom, username:this.username, password:this.password, image:this.image, sexe: this.sexe, date: this.date}).then(
-      () => {
-          console.log('ajouté avec succès');
-      },
-      error => {
-          console.log("echec");
-      });
 
   }
 
@@ -74,6 +66,15 @@ public file: Blob;
 
     let reader = new FileReader();
     reader.addEventListener('load', this.readFile);
+
+    this.dbService.add({ name: this.nom, username:this.username, password:this.password, image:this.image, sexe: this.sexe, date: this.date}).then(
+      () => {
+          console.log('ajouté avec succès');
+      },
+      error => {
+          console.log(error);
+      });
+
     reader.readAsText(this.file);
   }
 }
