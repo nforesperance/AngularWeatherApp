@@ -6,7 +6,7 @@ import { Component,Inject, OnInit,AfterViewInit,Input } from '@angular/core';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit,AfterViewInit {
-  @Input('cord') public res
+  @Input('cord') public cord
   public jsonWeather
   public response;
 	public desc 
@@ -36,8 +36,8 @@ export class WeatherComponent implements OnInit,AfterViewInit {
 
   constructor() { }
   ngOnInit(){
-    this.jsonWeather = this.res.current
-    this.list =  this.res.days.list
+    this.jsonWeather = this.cord.current
+    this.list =  this.cord.days.list
     this.txt = "2020-01-06"
     this.getWeatherInfo()
     this.getDates(this.list)

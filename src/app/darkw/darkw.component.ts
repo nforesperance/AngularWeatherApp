@@ -56,7 +56,7 @@ export class DarkwComponent implements OnInit,AfterViewInit{
        }
        if(arr.length-1 == index){
         arr.shift();
-         this.slides = arr.filter(elt =>arr.indexOf(elt)>0)
+         this.slides = arr
                
        }
     });
