@@ -18,11 +18,13 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
 import { SearchComponent } from './search/search.component';
+import { ProfilComponent } from './profil/profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
 =======
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgxIndexedDBModule ,DBConfig} from 'ngx-indexed-db';
+import { SearchComponent } from './search/Search.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
