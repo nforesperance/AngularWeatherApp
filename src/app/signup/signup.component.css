@@ -28,7 +28,7 @@ body:before{
      -o-transform: translate(-50%, -50%);
      transform: translate(-50%,-50%);
     width:410px; /* A toi de donner la bonne largeur */
-    height:509px; /* A toi de donner la bonne hauteur */
+    height:590px; /* A toi de donner la bonne hauteur */
     padding: 90px 40px;
     background: rgba(0,0,0,0.6);
     
@@ -100,7 +100,7 @@ body:before{
      width: 100%;
      margin-bottom: 20px;
  }
- .monForm input[type="text"], input[type="password"] {
+ .monForm input[type="text"], input[type="password"] ,input[type="date"]{
      border: none;
      border-bottom: 1px solid #fff;
      background: transparent;
@@ -109,6 +109,20 @@ body:before{
      color: #fff;
      font-size: 15px;
  }
+
+ .monForm label {
+    margin-top:10px;
+    display:block;}
+.monForm label.inline {
+    display:inline;
+    margin-right:50px;
+}
+
+.monForm input[type=radio] {
+    background-color:transparent;
+    border:none;
+    width:20px;}
+
  .monForm input[type="submit"]{
      height: 30px;
      color: #fff;
@@ -118,6 +132,6 @@ body:before{
      border-radius: 25px;
      border: none;
      outline: none;
-     margin-top:8%
+     margin-top:5%
 
  } 
