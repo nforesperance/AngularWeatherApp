@@ -18,6 +18,8 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
     
   }
+
+  public user;
   
   onSubmit(form: NgForm){
     console.log(form.value);
@@ -31,6 +33,8 @@ export class LoginFormComponent implements OnInit {
           if (password === person.password){
             
             console.log('login réussi');
+            this.user = person;
+            console.log(this.user);
             
           } else {
             console.log('echec de connexion')
