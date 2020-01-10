@@ -12,7 +12,9 @@ import {DarkwComponent } from './darkw/darkw.component';
 import {DarkdComponent } from './darkw/darkd/darkd.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { LoginFormComponent } from './login-form/login-form.component';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     DarkdComponent,
     DarkwComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginFormComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [ServeService],
   bootstrap: [AppComponent]
