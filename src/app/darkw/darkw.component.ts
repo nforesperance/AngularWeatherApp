@@ -33,6 +33,7 @@ export class DarkwComponent implements OnInit,AfterViewInit{
   public txt
    public current = true
    public slides
+   
 
   constructor() { }
   ngOnInit(){
@@ -45,7 +46,16 @@ export class DarkwComponent implements OnInit,AfterViewInit{
     
   }
   ngAfterViewInit() {  
-  
+    let $: any;
+    $(window).bind("resize",function(){
+      console.log($(this).width())
+      if($(this).width() <700){
+      $('.top-w').removeClass('contianer')
+      }
+      else{
+      $('.top-w').addClass('contianer')
+      }
+  })
   }  
   getDates(list){
     let arr = []

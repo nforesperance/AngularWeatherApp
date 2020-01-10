@@ -10,6 +10,8 @@ import { ServeService } from './services/serve.service';
 import { DayComponent } from './weather/day/day.component';
 import {DarkwComponent } from './darkw/darkw.component';
 import {DarkdComponent } from './darkw/darkd/darkd.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import {DarkdComponent } from './darkw/darkd/darkd.component';
     WeatherComponent,
     DayComponent,
     DarkdComponent,
-    DarkwComponent
+    DarkwComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

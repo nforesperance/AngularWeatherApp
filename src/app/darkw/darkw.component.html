@@ -1,86 +1,85 @@
 <div class="hero">
-    <!-- navbar -->
-    <!-- weather section  -->
-    <div class="container" *ngIf="current">
-        <div class="row">
-            <div id="" class="col-8 mx-auto weather">
-                <!-- weather header section -->
-                <div class="weather-head">
-                    <h1 id="location" class="text-center display-4">{{name}}, {{country}}</h1>
-                    <div class="row">							
-                        <div id="description" class="description col-4 text-center">
-                            <i id="icon-desc" class="wi wi-owm-{{icon}}"></i>
-                            <p class="desc">{{desc}}</p>			
-                        </div>
-                        <div id="temperature" class="col-8 text-center">
-                            {{temp}} &deg;C
-                            <!-- <i id="icon-thermometer" class="wi wi-thermometer"></i> -->
-                            <p class="">{{temp_max}}&deg;/{{temp_min}}&deg; Feels  Like {{feels_like}}&deg;</p>	
-                        </div>	
-                    </div>
-                    <!-- weather body header -->
-                    <div class="weather-body">					
-                        <div class="row">
-                            <div class="humidity col-4 text-center">
-                                <i class="wi wi-raindrop"></i><span> Humidity</span>
-                            </div>
-                            <div class="wind col-4 text-center">
-                                <i class="wi wi-strong-wind"></i><span> Wind Speed</span>
-                            </div>
-                            <div class="visibility col-4 text-center">
-                                <i class="fa fa-eye"></i><span> Visibility</span>
-                            </div>				
-                        </div>
-                        <!-- weather body data -->
-                        <div class="row">
-                            <div id="humidity" class="humidity-data col-4 text-center">
-                                {{humidity}}%
-                            </div>
-                            <div id="wind" class="wind-data col-4 text-center">
-                                {{windSpeed}}mph
-                            </div>
-                            <div id="visibility" class="degree-data col-4 text-center">
-                                    {{vis ? "clear" : visibility }}{{vis ? "" : " Miles" }} 
-                            </div>
-                        </div>
-                    </div>						
-                </div>					
-            </div>				
-        </div>
-    </div>	
-    <div class="container1">
-            <div class="row">
-            <div id="" class="col-8 mx-auto weather">
-                    <div class="mb-2">
-                            <ul class="nav nav-pills nav-justified mb-2">
-                            <li class="nav-item" [ngClass]="{'active' : current}">
-                                <button (click)="current = true" class="btn btn-primary">Hourly Forecast</button>
-                            </li>
-                            <li class="nav-item"[ngClass]="{'active' : !current}">
-                                <button (click)="current = false" class="btn btn-primary">Weekly Forecast</button>						
-                            </li>
-                            </ul>
-                            <div *ngIf="current; else elseBlock">
-                            <section>
-                                <div class="mb-2 day">{{day(list[0].dt_txt.substring(0,10))}}</div>
-                            </section>
-                                <div *ngIf="list[0].dt_txt.substring(0,10); let vari" > 
-                                <app-darkd [cord]="list" [txt]="vari"  [centered]="true"></app-darkd>
-                                </div>
-                            </div>
-                        <ng-template #elseBlock>
-                                    <div class="" *ngFor="let item of slides">
-                                        <div class="container">
-                                            <section>
-                                                <div class="mb-2 day">{{day(item)}}</div>
-                                            </section>
-                                            <app-darkd [cord]="list" [txt]="item" [centered]="false"></app-darkd>
-                                        </div>
-                                        
-                                    </div>
-                        </ng-template>
-                    </div>
-            </div>
-        </div>	
+		<!-- navbar -->
+		<!-- weather section  -->
+		<div class="container top-w" *ngIf="current">
+			<div class="row">
+				<div id="" class="col-8 mx-auto weather">
+					<!-- weather header section -->
+					<div class="weather-head">
+						<h1 id="location" class="text-center display-4">{{name}}, {{country}}</h1>
+						<div class="row">							
+							<div id="description" class="description col-md-4 text-center">
+								<i id="icon-desc" class="wi wi-owm-{{icon}}"></i>
+								<p class="desc">{{desc}}</p>			
+							</div>
+							<div id="temperature" class=" col-sm-12 col-md-8 text-center">
+								{{temp}} &deg;C
+								<!-- <i id="icon-thermometer" class="wi wi-thermometer"></i> -->
+								<p class="">{{temp_max}}&deg;/{{temp_min}}&deg; Feels  Like {{feels_like}}&deg;</p>	
+							</div>	
+						</div>
+						<!-- weather body header -->
+						<div class="weather-body">					
+							<div class="row">
+								<div class="humidity col-4 text-center">
+									<i class="wi wi-raindrop"></i><span class="txt-none"> Humidity</span>
+								</div>
+								<div class="wind col-4 text-center">
+									<i class="wi wi-strong-wind"></i><span class="txt-none"> Wind Speed</span>
+								</div>
+								<div class="visibility col-4 text-center">
+									<i class="fa fa-eye"></i><span class="txt-none"> Visibility</span>
+								</div>				
+							</div>
+							<!-- weather body data -->
+							<div class="row">
+								<div id="humidity" class="humidity-data col-4 text-center txt-sm">
+									{{humidity}}%
+								</div>
+								<div id="wind" class="wind-data col-4 text-center txt-sm">
+									{{windSpeed}}mph
+								</div>
+								<div id="visibility" class="degree-data col-4 text-center txt-sm">
+										{{vis ? "clear" : visibility }}{{vis ? "" : " Miles" }} 
+								</div>
+							</div>
+						</div>						
+					</div>					
+				</div>				
+			</div>
+		</div>	
+		<div class="container1">
+				<div class="row">
+				<div id="" class="col-8 mx-auto weather">
+						<div class="mb-2">
+								<ul class="nav nav-pills nav-justified mb-2">
+								<li class="nav-item" [ngClass]="{'active' : current}">
+									<button (click)="current = true" class="btn btn-primary">Hourly Forecast</button>
+								</li>
+								<li class="nav-item"[ngClass]="{'active' : !current}">
+									<button (click)="current = false" class="btn btn-primary">Weekly Forecast</button>						
+								</li>
+								</ul>
+								<div *ngIf="current; else elseBlock">
+								<section>
+									<div class="mb-2 day">{{day(list[0].dt_txt.substring(0,10))}}</div>
+								</section>
+									<div *ngIf="list[0].dt_txt.substring(0,10); let vari" > 
+									<app-day [cord]="list" [txt]="vari"  [centered]="true"></app-day>
+									</div>
+								</div>
+							<ng-template #elseBlock>
+										<div class="" *ngFor="let item of slides">
+												<section>
+													<div class="mb-2 day">{{day(item)}}</div>
+												</section> 
+												<app-day [cord]="list" [txt]="item" [centered]="false"></app-day>
+										
+										</div>
+							</ng-template>
+						</div>
+				</div>
+			</div>	
+	</div>
 </div>
-</div>
+	
