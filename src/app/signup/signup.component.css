@@ -20,7 +20,7 @@ body:before{
 }
 .monForm {
     position:absolute;
-    top:60%;
+    top:50%;
     left:50%;
      -webkit-transform: translate(-50%,-50%);
      -moz-transform: translate(-50%,-50%);
@@ -28,7 +28,7 @@ body:before{
      -o-transform: translate(-50%, -50%);
      transform: translate(-50%,-50%);
     width:410px; /* A toi de donner la bonne largeur */
-    height:600px; /* A toi de donner la bonne hauteur */
+    height:570px; /* A toi de donner la bonne hauteur */
     padding: 90px 40px;
     background: rgba(0,0,0,0.6);
     
@@ -134,6 +134,6 @@ body:before{
      border-radius: 25px;
      border: none;
      outline: none;
-     margin-top:5%
+     margin-top:4%
 
  } 
