@@ -12,7 +12,7 @@ import { stringify } from 'querystring';
 
 export class SignupComponent implements OnInit {
 
-  constructor(private dbService: NgxIndexedDBService){
+  constructor(public dbService: NgxIndexedDBService){
     dbService.currentStore = 'Users';
   }
 
