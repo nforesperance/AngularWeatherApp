@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
-import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
+
 export class LoginFormComponent implements OnInit {
   
-  constructor(private dbService: NgxIndexedDBService, private router: Router){
+  constructor(private dbService: NgxIndexedDBService){
     dbService.currentStore = 'Users';
   }
 
