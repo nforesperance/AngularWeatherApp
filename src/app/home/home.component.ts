@@ -53,11 +53,19 @@ export class HomeComponent implements OnInit {
       this.loading = false;
       this.load1 = false;
     })
+    .catch(err =>{
+      console.log(err)
+      
+    })
   }
   getWeather(pos){
     this.loading = true
+    let urls =[]
     let current = `http://api.openweathermap.org/data/2.5/weather?lat=${pos.lat}&lon=${pos.lng}&${this.appid}`;
     let url2 = `http://api.openweathermap.org/data/2.5/forecast?lat=${pos.lat}&lon=${pos.lng}&${this.appid}`;
+    urls.push(current)
+    urls.push(url2)
+    this.urls = urls
     this.loadData()
   }
 } 
