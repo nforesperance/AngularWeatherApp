@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { stringify } from 'querystring';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,7 @@ import { stringify } from 'querystring';
 
 export class SignupComponent implements OnInit {
 
-  constructor(public dbService: NgxIndexedDBService){
+  constructor(public dbService: NgxIndexedDBService,private router: Router){
     dbService.currentStore = 'Users';
   }
 
@@ -58,6 +59,7 @@ public file: Blob;
     this.dbService.add({ name: this.nom, username:this.username, password:this.password, image: this.file, sexe: this.sexe, date: this.date}).then(
       () => {
           console.log('ajouté avec succès');
+          this.router.navigate(['/login'])
       },
       error => {
           console.log(error);

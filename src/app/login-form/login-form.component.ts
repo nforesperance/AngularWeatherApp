@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
+import {Router} from "@angular/router"
 
 
 @Component({
@@ -11,7 +12,7 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 export class LoginFormComponent implements OnInit {
   
-  constructor(private dbService: NgxIndexedDBService){
+  constructor(private dbService: NgxIndexedDBService,private router: Router){
     dbService.currentStore = 'Users';
   }
 
@@ -35,9 +36,11 @@ export class LoginFormComponent implements OnInit {
             console.log('login réussi');
             this.user = person; // transfer the user information into user
             console.log(this.user);
+            this.router.navigate(['/home'])
             
           } else {
             console.log('echec de connexion')
+            this.router.navigate(['/login'])
           }
       },
       error => {

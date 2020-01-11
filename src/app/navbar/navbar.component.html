@@ -1,20 +1,15 @@
-<nav class="navbar">
-    <a class="navbar-brand" href="#">
-      <i class="fa fa-sun-o" aria-hidden="true"></i>
-      <strong>Weather</strong>App
-    </a>
-    <div class="dropdown">
-        <a class="btn btn-default dropdown-toggle" type="a" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <span class="caret">         
-                    Profile</span>
-        </a>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li>
-        <div class="map-section mt-5">
-            <p>Profile Infor</p>
-          </div>
-    </li>
-    
-  </ul>
-</div>
-  </nav>
+  <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">
+          <i class="fa fa-sun-o" aria-hidden="true"></i>
+          <strong>Weather</strong>App
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#" [routerLink]="['/profil']" routerLinkActive="router-link-active" >{{first}} <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#" [routerLink]="['/login']" routerLinkActive="router-link-active" >{{sec}}</a>
+        </div>
+      </div>
+    </nav>
