@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm} from '@angular/forms';
+import { FormBuilder,FormGroup, NgForm} from '@angular/forms';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 
@@ -10,8 +10,10 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
 })
 export class ProfilComponent implements OnInit {
 
-  nom: string;
-  date: string;
+  public nom = "sondi";
+  public username = "edvain"
+  public password = "azerty"
+  public date;
   sexe: string;
   image: string;
   public url: string | ArrayBuffer;
@@ -36,30 +38,45 @@ export class ProfilComponent implements OnInit {
     this.url = null;
   }
   
-  onSumitNom(form:NgForm) {
-    this.nom = form.value.nom;
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0]) {
+      this.file = event.target.files[0];
+      var reader = new FileReader();
 
-    let reader = new FileReader();
-    reader.addEventListener('load', this.readFile);
-    reader.readAsText(this.file);
+      reader.readAsDataURL(this.file); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.url = reader.result;
+      }
+    }
   }
 
-  onSumitDate(form:NgForm) {
-     this.date = form.value.date;
+  onSubmit(f:NgForm) {
+    if(!(f.value.name==="")) {
+      this.nom = f.value.name;
+    }
+    let intermediaire = this.nom;
+    if(!(f.value.username==="")) {
+      this.username = f.value.username;
+      console.log('la valeur de nom après modification de username est: '+ this.nom);
+      this.nom = intermediaire;
+    }
+    if(!(f.value.date==="")) {
+      this.date = f.value.date;
+      this.nom = intermediaire;
+    }
+    if(!(f.value.password === "")) {
+      this.password = f.value.password;
+      this.nom = intermediaire;
+    }
+    if(!(f.value.sexe==="")) {
+      this.sexe = f.value.sexe;
+      this.nom = intermediaire;
+    }
 
-     let reader = new FileReader();
-    reader.addEventListener('load', this.readFile);
-    reader.readAsText(this.file);
+    console.log(f.value);
+    console.log(f.valid);
   }
-
-  onSumitSexe(form:NgForm) {
-      this.sexe = form.value.sexe;
-
-      let reader = new FileReader();
-    reader.addEventListener('load', this.readFile);
-    reader.readAsText(this.file);
-  }
-
 
   constructor(private dbService: NgxIndexedDBService){
     dbService.currentStore = 'Users';

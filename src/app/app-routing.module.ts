@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:"login",component:LoginFormComponent},
   {path:"home",component:HomeComponent},
   {path:"signup",component:SignupComponent},
+  {path:"signup",component:SignupComponent},
   {path:"profil",component:ProfilComponent},
   {path:"**",component:Page404Component},
 ];

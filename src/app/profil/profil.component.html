@@ -1,136 +1,263 @@
-<app-navbar [first]="''" [sec]="'Log Out'"></app-navbar>
-<div class='row'>
-    <div class='col-2 offset-5' style='margin-top:50px; margin-bottom:20px;'>
-        <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" alt="" class="img-fluid rounded-circle">
-    </div>
-</div>
-<div class='row'>
-    <div class='col-6 offset-3'>
-        <div style='text-align:center;'>
-            <h4 style='margin-bottom:20px;'>Welcome {{prenom}} {{nom}}</h4>
-            <h6 style='margin-bottom:20px;'>Manage your information and the confidentiality of your data to make the most of the services of WeatherApp </h6>
-        </div>
-        <div class="card" style="width: auto; text-align:center;">
-            <h4>Personal information of your account</h4>
-            <p class="card-text">you can change each of your settings to update your profile</p>
-            <div class="card-body">
-                <h3 class="card-title">Profile</h3>
-                <div class='list-group'>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalPhoto'>
-                        <div class="row">
-                            <div class="col-11 centrage-vertical">
-                                <div>Picture : &ensp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; customize your account by adding a photo</div>
-                            </div>
-                            <div class="col-1">
-                                <img src="./images/photo2.png" class='img-fluid rounded-circle pull-right'>
-                            </div>
-                        </div>
-                    </button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalNom'>Name : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{nom}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalPrenom'>firstname : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{prenom}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalDateNaissance'>Birthday : &ensp;&emsp;&emsp;&emsp;{{dateNaissance}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalSexe'>Gender : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{sexe}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
-
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Debut Modal photo-->
-<div class="modal fade" id="modalPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit photo</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form (ngSumit)="onSumitNom(f)" #f="ngForm">
-                <div class="form-group">
-                  <input type="file" class="form-control" id="image" name="image" (change)= "onSelectFile($event)" ngModel>
-                  <input type="submit" value="image">
-                </div>
-            </form>
-        </div>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class='row'>
+      <div class='col-2 offset-5' style='margin-top:50px; margin-bottom:20px;'>
+          <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" alt="" class="img-fluid rounded-circle">
       </div>
-    </div>
-</div>
-<!--Fin Modal photo-->
-
-
-<!-- Debut Modal Nom-->
-<div class="modal fade" id="modalNom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Name</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form (ngSumit)="onSumitNom(f)" #f="ngForm">
-                <div class="form-group">
-                  <label for="username">New name</label>
-                  <input type="text" class="form-control" id="nom" name="nom" ngModel>
-                  <input type="submit" value="name">
-                </div>
-            </form>
-        </div>
-      </div>
-    </div>
-</div>
-<!--Fin Modal Nom-->
-
-<!-- Debut Modal Date de Naissance-->
-<div class="modal fade" id="modalDateNaissance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Change the Date of Birth</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form (ngSumit)= "onSumitDate(f)" #f="ngForm">
-              <div class="form-group">
-                <label for="username">choose the date</label>
-                <input type="text" name="date" class="form-control" id="date" placeholder="choisir la date de naissance" ngModel>
-                <input type="submit" value="date">
-              </div>
-          </form>
-      </div>
-    </div>
   </div>
-</div>
-<!--Fin Modal Date de Naissance-->
-
-<!-- Debut Modal sexe-->
-<div class="modal fade" id="modalSexe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Change gender</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-        <form (ngSumit)="onSumitSexe()" #f="ngForm">
-          <div>
-            <input type="radio" name="sexe" value="masculin" id="masculin" required ngModel>
-            <label for="oui" class="inline">male</label>
-            <input type="radio" name="sexe" value="feminin" id="feminin" required ngModel />
-            <label for="non" class="inline">female</label>
+  <div class='row'>
+      <div class='col-6 offset-3'>
+          <div style='text-align:center;'>
+              <h4 style='margin-bottom:20px;'>Bienvenue {{nom}}</h4>
+              <h6 style='margin-bottom:20px;'>Gerez vos informations, ainsi que la confidentialité de vos données pour profiter au mieux des services de WeatherApp </h6>
           </div>
-        </form>
-    </div>
+          <div class="card fond" style="width: auto; margin-bottom:40px; text-align:center;">
+              <h4 style='color:white;margin-top:40px'>Informations personnelles de votre compte</h4>
+              <p class="card-text" style='color:white;'>vous pouvez modifier chacun de vos paramètres afin de mettre à jour votre profil</p>
+              <div class="card-body">
+                  <h3 class="card-title">Profil</h3>
+                  <div class='list-group'>
+                      <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalPhoto'>
+                          <div class="row">
+                              <div class="col-11 centrage-vertical">
+                                  <div>Photo : &ensp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; personnalisez votre compte en ajoutant une photo</div>
+                              </div>
+                              <div class="col-1">
+                                  <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" class='img-fluid rounded-circle pull-right'>
+                              </div>
+                          </div>
+                      </button>
+                      <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalNom'>Nom : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{nom}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                      <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalUsername'>Username : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{username}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                      <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalPassword'>Password : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{password}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                      <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalDateNaissance'>Date de Naissance : &ensp;&emsp;&emsp;&emsp;{{date}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                      <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalSexe'>sexe : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{sexe}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+  
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
   </div>
-</div>
-</div>
-<!--Fin Modal sexe-->
+  
+  <!-- Debut Modal photo-->
+  <div class="modal fade" id="modalPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modifier la photo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <br>
+              <label class="hoverable" for="fileInput">
+                <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+              </label>
+            <br/>
+            <div class='text-center' style='margin-top:20px;'><input id="fileInput" type='file' (change)="onSelectFile($event)"></div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!--Fin Modal photo-->
+  
+<!-- Debut Modal Nom-->
+  <div class="modal fade" id="modalNom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier votre nom</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #f1="ngForm" (ngSubmit)="onSubmit(f1)">
+            <div class="form-group">
+              <label for='nom'>Noms et prenoms</label>
+              <input type='text' class="form-control" name='name' ngModel required #first="ngModel">
+              <label style='display:none' for='username'>Username</label>
+              <input style ='display:none' type='text' class="form-control" name='username' ngModel required #first="ngModel">
+              <label style='display:none' for='password'>Mot de passe</label>
+              <input style ='display:none' type='password' class="form-control" name='password' ngModel required #first="ngModel">
+              <label style='display:none' for='password'>Date de Naissance</label>
+              <input style ='display:none' type='date' class="form-control" name='date' ngModel required #first="ngModel">
+              <div  style='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name='sexe' id="inlineCheckbox1" value="masculin" checked>
+                <label class="form-check-label" for="inlineCheckbox1">masculin</label>
+              </div>
+              <div style='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" name='sexe' type="radio" id="inlineCheckbox2" value="feminin">
+                <label class="form-check-label" for="inlineCheckbox2">feminin</label>
+              </div>
+            </div>
+            <button class='btn btn-success pull-right'>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--Fin Modal Nom-->
+  
+  <!-- Debut Modal Username-->
+  <div class="modal fade" id="modalUsername" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier votre username</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #f2="ngForm" (ngSubmit)="onSubmit(f2)">
+            <div class="form-group">
+              <label style='display:none' for='nom'>Noms et prenoms</label>
+              <input style='display:none' type='text' class="form-control" name='name' ngModel required #first="ngModel">
+              <label  for='username'>Username</label>
+              <input type='text' class="form-control" id='username' name='username' ngModel required #first="ngModel">
+              <label style='display:none' for='password'>Mot de passe</label>
+              <input style ='display:none' type='password' class="form-control" name='password' ngModel required #first="ngModel">
+              <label style='display:none' for='password'>Date de Naissance</label>
+              <input style ='display:none' type='date' class="form-control" name='date' ngModel required #first="ngModel">
+              <div  style='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name='sexe' id="inlineCheckbox1" value="masculin" checked>
+                <label class="form-check-label" for="inlineCheckbox1">masculin</label>
+              </div>
+              <div style='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" name='sexe' type="radio" id="inlineCheckbox2" value="feminin">
+                <label class="form-check-label" for="inlineCheckbox2">feminin</label>
+              </div>
+            </div>
+            <button class='btn btn-success pull-right'>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--Fin Modal Username-->
+  
+    <!-- Debut Modal Password-->
+  <div class="modal fade" id="modalPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier votre password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #f3="ngForm" (ngSubmit)="onSubmit(f3)">
+            <div class="form-group">
+              <label style ='display:none' for='nom'>Noms et prenoms</label>
+              <input style ='display:none' type='text' class="form-control" name='name' ngModel required #first="ngModel">
+              <label style='display:none' for='username'>Username</label>
+              <input style='display:none' type='text' class="form-control" name='username' ngModel required #first="ngModel">
+              <label for='password'>Mot de passe</label>
+              <input type='text' class="form-control" id="password" name='password' ngModel required #first="ngModel">
+              <label style ='display:none' for='password'>Date de Naissance</label>
+              <input style ='display:none' type='date' class="form-control" name='date' ngModel required #first="ngModel">
+              <div  style ='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name='sexe' id="inlineCheckbox1" value="masculin" checked>
+                <label class="form-check-label" for="inlineCheckbox1">masculin</label>
+              </div>
+              <div style ='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" name='sexe' type="radio" id="inlineCheckbox2" value="feminin">
+                <label class="form-check-label" for="inlineCheckbox2">feminin</label>
+              </div>
+            </div>
+            <button class='btn btn-success pull-right'>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--Fin Modal Password-->
+  
+    <!-- Debut Modal Date-->
+  <div class="modal fade" id="modalDateNaissance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier votre date de naissance</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body fond">
+          <form #f4="ngForm" (ngSubmit)="onSubmit(f4)">
+            <div class="form-group">
+              <label style ='display:none' for='nom'>Noms et prenoms</label>
+              <input style ='display:none' type='text' class="form-control" name='name' ngModel required #first="ngModel">
+              <label style='display:none' for='username'>Username</label>
+              <input style ='display:none' type='text' class="form-control" name='username' ngModel required #first="ngModel">
+              <label style='display:none' for='password'>Mot de passe</label>
+              <input style ='display:none' type='password' class="form-control" name='password' ngModel required #first="ngModel">
+              <label for='password'>Date de Naissance</label>
+              <input type='date' class="" style='border-width:2px; border-color:black;' name='date' ngModel required #first="ngModel">
+              <div  style ='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name='sexe' id="inlineCheckbox1" value="masculin" checked>
+                <label class="form-check-label" for="inlineCheckbox1">masculin</label>
+              </div>
+              <div style ='display:none' class="form-check form-check-inline">
+                <input class="form-check-input" name='sexe' type="radio" id="inlineCheckbox2" value="feminin">
+                <label class="form-check-label" for="inlineCheckbox2">feminin</label>
+              </div>
+            </div>
+            <button class='btn btn-success pull-right'>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--Fin Modal Date-->
+  
+    <!-- Debut Modal Sexe-->
+  <div class="modal fade" id="modalSexe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier votre sexe</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #f5="ngForm" (ngSubmit)="onSubmit(f5)">
+            <div class="form-group">
+              <label style='display:none' for='nom'>Noms et prenoms</label>
+              <input style='display:none' type='text' class="form-control" name='name' ngModel required #first="ngModel">
+              <label style='display:none' for='username'>Username</label>
+              <input style ='display:none' type='text' class="form-control" name='username' ngModel required #first="ngModel">
+              <label style='display:none' for='password'>Mot de passe</label>
+              <input style ='display:none' type='password' class="form-control" name='password' ngModel required #first="ngModel">
+              <label style='display:none' for='password'>Date de Naissance</label>
+              <input style ='display:none' type='date' class="form-control" name='date' ngModel required #first="ngModel">
+              <div  class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name='sexe' id="inlineCheckbox1" value="masculin" checked>
+                <label class="form-check-label" for="inlineCheckbox1">masculin</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name='sexe' type="radio" id="inlineCheckbox2" value="feminin">
+                <label class="form-check-label" for="inlineCheckbox2">feminin</label>
+              </div>
+            </div>
+            <button class='btn btn-success pull-right'>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--Fin Modal Sexe-->
+  </body>
+  </html>
