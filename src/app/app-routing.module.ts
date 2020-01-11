@@ -4,6 +4,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfilComponent } from './profil/profil.component';
+import { Page404Component } from './page404/page404.component';
 
 
 const routes: Routes = [
@@ -14,11 +15,11 @@ const routes: Routes = [
   },
   { path: "login", component: LoginFormComponent },
   { path: "home", component: HomeComponent },
-  { path: "signup", component: SignupComponent },
   {path:"login",component:LoginFormComponent},
   {path:"home",component:HomeComponent},
   {path:"signup",component:SignupComponent},
   {path:"profil",component:ProfilComponent},
+  {path:"**",component:Page404Component},
 ];
 
 @NgModule({
