@@ -29,6 +29,9 @@ export class HomeComponent implements OnInit {
         
       });
   }
+  mapClicked(){
+    this.showmap = ! this.showmap
+  }
   getData(url){
     return new Promise((resolve,reject)=>{
       this.http.get(url).toPromise()

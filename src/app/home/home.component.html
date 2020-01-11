@@ -1,8 +1,5 @@
 <app-navbar [first]="'Profile'" [sec]="'Log Out'"></app-navbar>
-<app-search (mapEvent) ="getWeather($event)"></app-search>
-    <button (click)="showmap = !showmap" class="m-3 btn btn-lg btn-info">
-        {{showmap ? 'Weather' : 'Map'}} <i class="fa fa-search" aria-hidden="true"></i>
-    </button>
+<app-search (mapEvent) ="getWeather($event)" (mapE) ="mapClicked()"></app-search>
 
 <div>
         <div class="loader" *ngIf="loading || load1; else showBlock">

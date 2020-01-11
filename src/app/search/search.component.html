@@ -14,5 +14,8 @@
       <button class="m-3 btn btn-lg btn-primary" (click)="click($event)"> Search
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
+      <button (click)="mapClick()" class="m-3 btn btn-lg btn-info">
+          {{showmap ? 'Weather' : 'Map'}} <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
     </div>
 </form>

@@ -15,12 +15,12 @@ import { MatSnackBar } from '@angular/material';
 export class SearchComponent implements OnInit {
 
   @Output() public mapEvent = new EventEmitter();
-
+  @Output() public mapE= new EventEmitter();
   searchControl = new FormControl();
   cities: any[] = [];
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<any[]>;
-
+  showmap: boolean = false;
   constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
@@ -59,6 +59,10 @@ export class SearchComponent implements OnInit {
       const lng = array[0].coord.lon;
       this.mapEvent.emit({ lat: lat, lng: lng, showmap: false });
     }
+  }
+  mapClick(){
+    this.mapE.emit();
+    this.showmap = !this.showmap
   }
 
   error(message: string, action = '', duration = 3500) {
