@@ -7,29 +7,29 @@
 <div class='row'>
     <div class='col-6 offset-3'>
         <div style='text-align:center;'>
-            <h4 style='margin-bottom:20px;'>Bienvenue {{prenom}} {{nom}}</h4>
-            <h6 style='margin-bottom:20px;'>Gerez vos informations, ainsi que la confidentialité de vos données pour profiter au mieux des services de WeatherApp </h6>
+            <h4 style='margin-bottom:20px;'>Welcome {{prenom}} {{nom}}</h4>
+            <h6 style='margin-bottom:20px;'>Manage your information and the confidentiality of your data to make the most of the services of WeatherApp </h6>
         </div>
         <div class="card" style="width: auto; text-align:center;">
-            <h4>Informations personnelles de votre compte</h4>
-            <p class="card-text">vous pouvez modifier chacun de vos paramètres afin de mettre à jour votre profil</p>
+            <h4>Personal information of your account</h4>
+            <p class="card-text">you can change each of your settings to update your profile</p>
             <div class="card-body">
-                <h3 class="card-title">Profil</h3>
+                <h3 class="card-title">Profile</h3>
                 <div class='list-group'>
                     <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalPhoto'>
                         <div class="row">
                             <div class="col-11 centrage-vertical">
-                                <div>Photo : &ensp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; personnalisez votre compte en ajoutant une photo</div>
+                                <div>Picture : &ensp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; customize your account by adding a photo</div>
                             </div>
                             <div class="col-1">
                                 <img src="./images/photo2.png" class='img-fluid rounded-circle pull-right'>
                             </div>
                         </div>
                     </button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalNom'>Nom : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{nom}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalPrenom'>Prenom : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{prenom}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalDateNaissance'>Date de Naissance : &ensp;&emsp;&emsp;&emsp;{{dateNaissance}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
-                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalSexe'>sexe : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{sexe}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalNom'>Name : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{nom}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalPrenom'>firstname : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{prenom}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalDateNaissance'>Birthday : &ensp;&emsp;&emsp;&emsp;{{dateNaissance}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
+                    <button class='btn btn-light list-group-item text-left' data-toggle="modal" data-target='#modalSexe'>Gender : &ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {{sexe}} &emsp;<i class="fa fa-chevron-right pull-right"></i></button>
 
                 </div>
                 
@@ -43,7 +43,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modifier la photo</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Edit photo</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -67,7 +67,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modifier le Nom</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Edit Name</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -75,7 +75,7 @@
         <div class="modal-body">
             <form (ngSumit)="onSumitNom(f)" #f="ngForm">
                 <div class="form-group">
-                  <label for="username">Nouveau Nom</label>
+                  <label for="username">New name</label>
                   <input type="text" class="form-control" id="nom" name="nom" ngModel>
                   <input type="submit" value="name">
                 </div>
@@ -91,7 +91,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modifier le Date de Naissance</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Change the Date of Birth</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -99,7 +99,7 @@
       <div class="modal-body">
           <form (ngSumit)= "onSumitDate(f)" #f="ngForm">
               <div class="form-group">
-                <label for="username">choisir la date</label>
+                <label for="username">choose the date</label>
                 <input type="text" name="date" class="form-control" id="date" placeholder="choisir la date de naissance" ngModel>
                 <input type="submit" value="date">
               </div>
@@ -115,7 +115,7 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Modifier son sexe</h5>
+      <h5 class="modal-title" id="exampleModalLabel">Change gender</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -124,9 +124,9 @@
         <form (ngSumit)="onSumitSexe()" #f="ngForm">
           <div>
             <input type="radio" name="sexe" value="masculin" id="masculin" required ngModel>
-            <label for="oui" class="inline">masculin</label>
+            <label for="oui" class="inline">male</label>
             <input type="radio" name="sexe" value="feminin" id="feminin" required ngModel />
-            <label for="non" class="inline">feminin</label>
+            <label for="non" class="inline">female</label>
           </div>
         </form>
     </div>
