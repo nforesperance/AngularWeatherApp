@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<app-search (mapEvent) ="getWeather($event)"></app-search>
     <button (click)="showmap = !showmap" class="m-3 btn btn-lg btn-info">
         {{showmap ? 'Weather' : 'Map'}} <i class="fa fa-search" aria-hidden="true"></i>
     </button>

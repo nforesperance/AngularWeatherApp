@@ -20,6 +20,7 @@ import { SearchComponent } from './search/search.component';
 import { ProfilComponent } from './profil/profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatAutocompleteModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+import { Page404Component } from './page404/page404.component';
 const dbConfig: DBConfig = {
   name: 'Users',
   version: 1,
@@ -50,7 +51,8 @@ const dbConfig: DBConfig = {
     LoginFormComponent,
     SignupComponent,
     SearchComponent,
-    ProfilComponent
+    ProfilComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
