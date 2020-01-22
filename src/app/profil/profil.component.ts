@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder,FormGroup, NgForm} from '@angular/forms';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
+
 
 
 @Component({
@@ -8,7 +9,11 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.css']
 })
+
 export class ProfilComponent implements OnInit {
+
+  @Input()
+  user;
 
   public nom = "sondi";
   public username = "edvain"
@@ -81,7 +86,10 @@ export class ProfilComponent implements OnInit {
   constructor(private dbService: NgxIndexedDBService){
     dbService.currentStore = 'Users';
   }
+
+
   ngOnInit() {
+    console.log("current user  "+this.user)
   }
 
 }

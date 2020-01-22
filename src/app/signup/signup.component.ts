@@ -59,6 +59,7 @@ public file: Blob;
     this.dbService.add({ name: this.nom, username:this.username, password:this.password, image: this.file, sexe: this.sexe, date: this.date}).then(
       () => {
           console.log('ajouté avec succès');
+          alert('Signed up successfuly, now log in')
           this.router.navigate(['/login'])
       },
       error => {

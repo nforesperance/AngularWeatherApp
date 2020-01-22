@@ -34,7 +34,7 @@ export class LoginFormComponent implements OnInit {
           if (password === person.password){
             
             console.log('login réussi');
-            this.user = person; // transfer the user information into user
+            this.user = person; // transfer the user informations into user
             console.log(this.user);
             this.router.navigate(['/home'])
             
