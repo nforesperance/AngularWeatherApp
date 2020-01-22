@@ -93,3 +93,6 @@ ul >li.nav-item button{
 	  font-size: 1.7rem;
 	  font-weight: bold;
   }
+  .head{
+	  min-width: 100%;
+  }
