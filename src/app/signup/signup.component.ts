@@ -56,7 +56,7 @@ public file: Blob;
 
     console.log(form.value);
 
-    this.dbService.add({ name: this.nom, username:this.username, password:this.password, image: this.file, sexe: this.sexe, date: this.date}).then(
+    this.dbService.add({ name: this.nom, username:this.username, password:this.password, image: this.file, sexe: this.sexe, date: this.date, loggedin:0}).then(
       () => {
           console.log('ajouté avec succès');
           alert('Signed up successfuly, now log in')

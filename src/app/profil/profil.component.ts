@@ -12,17 +12,18 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 export class ProfilComponent implements OnInit {
 
-  @Input()
-  user;
+  
+  public user;
 
-  public nom = "sondi";
-  public username = "edvain"
-  public password = "azerty"
-  public date;
-  sexe: string;
-  image: string;
+  public nom 
+  public username
+  public password
+  public date
+  public sexe
+  public image
   public url: string | ArrayBuffer;
   public file: Blob;
+
 
   readFile(event) {
 
@@ -88,8 +89,12 @@ export class ProfilComponent implements OnInit {
   }
 
 
-  ngOnInit() {
-    console.log("current user  "+this.user)
+  ngOnInit() {  
+          this.nom = "Sondi";
+          this.username = "dals32"
+          this.password = "32"
+          this.date = "10/02/2000";
+          this.sexe=  "masculin"
   }
 
 }

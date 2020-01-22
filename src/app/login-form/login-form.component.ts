@@ -35,8 +35,19 @@ export class LoginFormComponent implements OnInit {
             
             console.log('login réussi');
             this.user = person; // transfer the user informations into user
-            console.log(this.user);
+            console.log(this.user.id);
+
+            this.dbService.update({name: this.user.name, username:this.user.username, password:this.user.password, image: this.user.image, sexe: this.user.sexe, date: this.user.date,loggedin:1, id:this.user.id}).then(
+              () => {
+                console.log('loggedin takes 1')
+              },
+              error => {
+                console.log(error);
+              }
+            );
+
             this.router.navigate(['/home'])
+            
             
           } else {
             console.log('echec de connexion')
@@ -46,18 +57,13 @@ export class LoginFormComponent implements OnInit {
       error => {
           console.log('echec');
       }
-      //you will get the information of the connected user with the user objet
-      //fuction to convert the image in order to use it. Notice that that function is written in js, you will try to write it in typescript
-
-      /*
-      let URL = window.URL|window.webkitURL;
-      var imgURL = URL.createObjectURL(user);
-      var imgElephant = document.getElementById("elephant");
-      imgElephant.setAttribute("src", imgURL);
-      */
-
     );
 
   }
+
+
+
+
+
 
 }

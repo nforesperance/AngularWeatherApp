@@ -33,7 +33,8 @@ const dbConfig: DBConfig = {
       { name: 'password', keypath: 'password', options: { unique: true } },
       { name: 'image', keypath: 'image', options: { unique: false } },
       { name: 'sexe', keypath: 'sexe', options: { unique: false } },
-      { name: 'birthday', keypath: 'birthday', options: { unique: false } }
+      { name: 'birthday', keypath: 'birthday', options: { unique: false }},
+      { name: 'loggedin', keypath: 'loggedin', options: { unique: false }}
     ]
   }]
 };
